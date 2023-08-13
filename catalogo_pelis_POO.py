@@ -19,6 +19,8 @@ while opcion != 4:
 
         if opcion == 1:
             nombre_pelicula = input("Escriba el nombre de la película: ")
+            if nombre_pelicula == "":
+                print("Error, por favor escribir bien el nombre de la película")
             pelicula = Pelicula(nombre_pelicula)
             catalogo.agregar_pelicula(pelicula)
             

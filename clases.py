@@ -4,7 +4,9 @@ class Pelicula:
     def __init__(self, nombre):
         self.__nombre = nombre #atributo privado
 
-   #crear método __str__ 
+   
+    def __str__(self):
+        return f"nombre:{self.nombre}"
 
    #Métodos de acceso para el atributo privado: mostrar el atributo "nombre" y modificarlo
    # recordar que hay dos metodos (decoradores o funciones)
@@ -28,10 +30,9 @@ class CatalogoPelicula:
             archivo.write(f'{pelicula.nombre}\n')
 
     def listar_peliculas(self):
-        # abrir el archivo con with 
-        # imprimir lo que hay en el archivo ( arhivo.read() )
-        #print()
-        pass
+        with open(self.ruta_archivo, 'r') as archivo:
+           print(archivo.read())  #mostrar lo que hay dentro del archivo txt
+
 
     def eliminar_catalogo(self):
         os.remove(self.ruta_archivo)
